@@ -174,16 +174,16 @@ PillDotCorner.CornerRadius = UDim.new(1, 0)
 PillDotCorner.Parent = PillDot
 
 local PillText = Instance.new("TextLabel")
-PillText.Size                   = UDim2.new(1, -20, 1, 0)
-PillText.Position               = UDim2.new(0, 18, 0, 0)
+PillText.Size                 = UDim2.new(1, -20, 1, 0)
+PillText.Position             = UDim2.new(0, 18, 0, 0)
 PillText.BackgroundTransparency = 1
-PillText.Text                   = _executorName
-PillText.TextColor3             = Theme.Text
-PillText.TextSize               = 9
-PillText.Font                   = Enum.Font.GothamBold
-PillText.TextXAlignment         = Enum.TextXAlignment.Left
-PillText.TextTruncate           = Enum.TextTruncate.AtEnd
-PillText.Parent                 = Pill
+PillText.Text                 = _executorName
+PillText.TextColor3           = Theme.Text
+PillText.TextSize             = 9
+PillText.Font                 = Enum.Font.GothamBold
+PillText.TextXAlignment       = Enum.TextXAlignment.Left
+PillText.TextTruncate         = Enum.TextTruncate.AtEnd
+PillText.Parent               = Pill
 
 task.spawn(function()
     while PillDot and PillDot.Parent do
@@ -323,14 +323,14 @@ task.spawn(function()
 end)
 
 local tabScroll = Instance.new("ScrollingFrame")
-tabScroll.Size                 = UDim2.new(1, 0, 1, 0)
+tabScroll.Size                   = UDim2.new(1, 0, 1, 0)
 tabScroll.BackgroundTransparency = 1
-tabScroll.BorderSizePixel      = 0
-tabScroll.ScrollBarThickness   = 0
-tabScroll.CanvasSize           = UDim2.new(0, 0, 0, 0)
-tabScroll.AutomaticCanvasSize  = Enum.AutomaticSize.Y
-tabScroll.ScrollingDirection   = Enum.ScrollingDirection.Y
-tabScroll.Parent               = sidebar
+tabScroll.BorderSizePixel        = 0
+tabScroll.ScrollBarThickness     = 0
+tabScroll.CanvasSize             = UDim2.new(0, 0, 0, 0)
+tabScroll.AutomaticCanvasSize    = Enum.AutomaticSize.Y
+tabScroll.ScrollingDirection     = Enum.ScrollingDirection.Y
+tabScroll.Parent                 = sidebar
 
 local tabLayout = Instance.new("UIListLayout")
 tabLayout.SortOrder = Enum.SortOrder.LayoutOrder
@@ -354,14 +354,14 @@ contentFrame.ClipsDescendants       = true
 contentFrame.Parent                 = bodyFrame
 
 local contentScroll = Instance.new("ScrollingFrame")
-contentScroll.Size                 = UDim2.new(1, 0, 1, 0)
+contentScroll.Size                   = UDim2.new(1, 0, 1, 0)
 contentScroll.BackgroundTransparency = 1
-contentScroll.BorderSizePixel      = 0
-contentScroll.ScrollBarThickness   = 0
-contentScroll.CanvasSize           = UDim2.new(0, 0, 0, 0)
-contentScroll.AutomaticCanvasSize  = Enum.AutomaticSize.Y
-contentScroll.ScrollingDirection   = Enum.ScrollingDirection.Y
-contentScroll.Parent               = contentFrame
+contentScroll.BorderSizePixel        = 0
+contentScroll.ScrollBarThickness     = 0
+contentScroll.CanvasSize             = UDim2.new(0, 0, 0, 0)
+contentScroll.AutomaticCanvasSize    = Enum.AutomaticSize.Y
+contentScroll.ScrollingDirection     = Enum.ScrollingDirection.Y
+contentScroll.Parent                 = contentFrame
 
 local contentLayout = Instance.new("UIListLayout")
 contentLayout.SortOrder = Enum.SortOrder.LayoutOrder
@@ -379,14 +379,14 @@ local function SelectTab(target)
     for _, td in ipairs(registeredTabs) do
         td.page.Visible   = false
         td.accent.Visible = false
-        TweenService:Create(td.btn,     TweenInfo.new(0.12), {BackgroundColor3 = Theme.Raised, TextColor3 = Theme.Dim}):Play()
+        TweenService:Create(td.btn, TweenInfo.new(0.12), {BackgroundColor3 = Theme.Raised, TextColor3 = Theme.Dim}):Play()
         if td.iconImg then
             TweenService:Create(td.iconImg, TweenInfo.new(0.12), {ImageColor3 = Theme.Dim}):Play()
         end
         if td.customPanel then td.customPanel.Visible = false end
     end
     target.accent.Visible = true
-    TweenService:Create(target.btn,     TweenInfo.new(0.12), {BackgroundColor3 = Theme.Hover, TextColor3 = Theme.Accent}):Play()
+    TweenService:Create(target.btn, TweenInfo.new(0.12), {BackgroundColor3 = Theme.Hover, TextColor3 = Theme.Accent}):Play()
     if target.iconImg then
         TweenService:Create(target.iconImg, TweenInfo.new(0.12), {ImageColor3 = Theme.Accent}):Play()
     end
@@ -483,7 +483,7 @@ local function NewTab(name, icon, order)
     end
 
     local page = Instance.new("ScrollingFrame")
-    page.Size                  = UDim2.new(1, 0, 1, 0)
+    page.Size                   = UDim2.new(1, 0, 1, 0)
     page.BackgroundTransparency = 1
     page.BorderSizePixel        = 0
     page.ScrollBarThickness     = 0
@@ -560,12 +560,12 @@ end
 
 local function NewSection(parent, title, iconName)
     local sec = Instance.new("Frame")
-    sec.Size              = UDim2.new(1, 0, 0, 0)
+    sec.Size                   = UDim2.new(1, 0, 0, 0)
     sec.BackgroundTransparency = 1
-    sec.BorderSizePixel   = 0
-    sec.AutomaticSize     = Enum.AutomaticSize.Y
-    sec.LayoutOrder       = nextOrd()
-    sec.Parent            = parent
+    sec.BorderSizePixel        = 0
+    sec.AutomaticSize          = Enum.AutomaticSize.Y
+    sec.LayoutOrder            = nextOrd()
+    sec.Parent                 = parent
 
     local secLayout = Instance.new("UIListLayout")
     secLayout.SortOrder = Enum.SortOrder.LayoutOrder
@@ -573,10 +573,10 @@ local function NewSection(parent, title, iconName)
     secLayout.Parent    = sec
 
     local hdr = Instance.new("Frame")
-    hdr.Size             = UDim2.new(1, 0, 0, 24)
+    hdr.Size                   = UDim2.new(1, 0, 0, 24)
     hdr.BackgroundTransparency = 1
-    hdr.LayoutOrder      = nextOrd()
-    hdr.Parent           = sec
+    hdr.LayoutOrder            = nextOrd()
+    hdr.Parent                 = sec
 
     local iconOffset = 0
     if iconName then
@@ -598,15 +598,15 @@ local function NewSection(parent, title, iconName)
     end
 
     local hdrTxt = Instance.new("TextLabel")
-    hdrTxt.Size              = UDim2.new(1, -iconOffset, 1, -2)
-    hdrTxt.Position          = UDim2.new(0, iconOffset, 0, 0)
+    hdrTxt.Size                   = UDim2.new(1, -iconOffset, 1, -2)
+    hdrTxt.Position               = UDim2.new(0, iconOffset, 0, 0)
     hdrTxt.BackgroundTransparency = 1
-    hdrTxt.Text              = title
-    hdrTxt.TextColor3        = Theme.Dim
-    hdrTxt.TextSize          = 10
-    hdrTxt.Font              = Enum.Font.GothamBold
-    hdrTxt.TextXAlignment    = Enum.TextXAlignment.Left
-    hdrTxt.Parent            = hdr
+    hdrTxt.Text                   = title
+    hdrTxt.TextColor3             = Theme.Dim
+    hdrTxt.TextSize               = 10
+    hdrTxt.Font                   = Enum.Font.GothamBold
+    hdrTxt.TextXAlignment         = Enum.TextXAlignment.Left
+    hdrTxt.Parent                 = hdr
 
     local hdrLine = Instance.new("Frame")
     hdrLine.Size             = UDim2.new(1, 0, 0, 1)
@@ -1544,12 +1544,12 @@ local function NewColorPicker(parent, label, sub, defaultColor, callback, iconNa
     end
 
     local container = Instance.new("Frame")
-    container.Size              = UDim2.new(1, 0, 0, 0)
-    container.AutomaticSize     = Enum.AutomaticSize.Y
+    container.Size                   = UDim2.new(1, 0, 0, 0)
+    container.AutomaticSize          = Enum.AutomaticSize.Y
     container.BackgroundTransparency = 1
-    container.BorderSizePixel   = 0
-    container.LayoutOrder       = nextOrd()
-    container.Parent            = parent
+    container.BorderSizePixel        = 0
+    container.LayoutOrder            = nextOrd()
+    container.Parent                 = parent
 
     local cLayout = Instance.new("UIListLayout")
     cLayout.SortOrder = Enum.SortOrder.LayoutOrder
@@ -1925,11 +1925,11 @@ local function NewBodyPartSelector(parent, label, sub, selectedParts, allParts, 
     local ABW = math.floor((TOTAL_INNER_W - CG * 2) / 3)
 
     local container = Instance.new("Frame")
-    container.Size               = UDim2.new(1, 0, 0, 0)
-    container.AutomaticSize      = Enum.AutomaticSize.Y
+    container.Size                   = UDim2.new(1, 0, 0, 0)
+    container.AutomaticSize          = Enum.AutomaticSize.Y
     container.BackgroundTransparency = 1
-    container.LayoutOrder        = nextOrd()
-    container.Parent             = parent
+    container.LayoutOrder            = nextOrd()
+    container.Parent                 = parent
 
     local cLayout = Instance.new("UIListLayout")
     cLayout.SortOrder = Enum.SortOrder.LayoutOrder
@@ -1949,15 +1949,15 @@ local function NewBodyPartSelector(parent, label, sub, selectedParts, allParts, 
         local asset = getLucideAsset(iconName, 32)
         if asset then
             local img = Instance.new("ImageLabel")
-            img.Size               = UDim2.new(0, 16, 0, 16)
-            img.Position           = UDim2.new(0, 10, 0, 9)
+            img.Size                   = UDim2.new(0, 16, 0, 16)
+            img.Position               = UDim2.new(0, 10, 0, 9)
             img.BackgroundTransparency = 1
-            img.Image              = asset.Url
-            img.ImageRectSize      = asset.ImageRectSize
-            img.ImageRectOffset    = asset.ImageRectOffset
-            img.ScaleType          = Enum.ScaleType.Fit
-            img.ImageColor3        = Theme.Accent
-            img.Parent             = header
+            img.Image                  = asset.Url
+            img.ImageRectSize          = asset.ImageRectSize
+            img.ImageRectOffset        = asset.ImageRectOffset
+            img.ScaleType              = Enum.ScaleType.Fit
+            img.ImageColor3            = Theme.Accent
+            img.Parent                 = header
             _regAcc(img, "ImageColor3")
             labelOffset = 30
         end
@@ -1981,7 +1981,7 @@ local function NewBodyPartSelector(parent, label, sub, selectedParts, allParts, 
     Stroke(badgeBg, Theme.Line, 0.5)
 
     local countLbl = Label(badgeBg, "0", 12, Theme.Accent, Enum.Font.GothamBold)
-    countLbl.Size          = UDim2.new(1, 0, 1, 0)
+    countLbl.Size           = UDim2.new(1, 0, 1, 0)
     countLbl.TextXAlignment = Enum.TextXAlignment.Center
     _regAcc(countLbl, "TextColor3")
     local body = Instance.new("Frame")
@@ -2190,10 +2190,10 @@ local function NewBodyPartSelector(parent, label, sub, selectedParts, allParts, 
         updateCount()
     end)
     local headerBtn = Instance.new("TextButton")
-    headerBtn.Size                 = UDim2.new(1, 0, 1, 0)
+    headerBtn.Size                   = UDim2.new(1, 0, 1, 0)
     headerBtn.BackgroundTransparency = 1
-    headerBtn.Text                 = ""
-    headerBtn.Parent               = header
+    headerBtn.Text                   = ""
+    headerBtn.Parent                 = header
 
     local expanded = false
     local function toggleExpand()
@@ -2365,11 +2365,11 @@ closeBtn.MouseButton1Click:Connect(function()
 end)
 
 local _notifGui = Instance.new("ScreenGui")
-_notifGui.Name            = "iDepHub Notifications"
-_notifGui.ResetOnSpawn    = false
-_notifGui.ZIndexBehavior  = Enum.ZIndexBehavior.Sibling
-_notifGui.DisplayOrder    = 1000
-_notifGui.Parent          = playerGui
+_notifGui.Name           = "iDepHub Notifications"
+_notifGui.ResetOnSpawn   = false
+_notifGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+_notifGui.DisplayOrder   = 1000
+_notifGui.Parent         = playerGui
 
 local _notifOffset = 0
 
@@ -2395,29 +2395,29 @@ local function sendNotification(title, text, duration)
     stroke.Parent    = card
 
     local titleL = Instance.new("TextLabel")
-    titleL.Size               = UDim2.new(1, -26, 0, 24)
-    titleL.Position           = UDim2.new(0, 12, 0, 8)
+    titleL.Size                   = UDim2.new(1, -26, 0, 24)
+    titleL.Position               = UDim2.new(0, 12, 0, 8)
     titleL.BackgroundTransparency = 1
-    titleL.Text               = title
-    titleL.TextColor3         = Theme.Accent
-    titleL.TextSize           = 14
-    titleL.Font               = Enum.Font.GothamBold
-    titleL.TextXAlignment     = Enum.TextXAlignment.Left
-    titleL.ZIndex             = 102
-    titleL.Parent             = card
+    titleL.Text                   = title
+    titleL.TextColor3             = Theme.Accent
+    titleL.TextSize               = 14
+    titleL.Font                   = Enum.Font.GothamBold
+    titleL.TextXAlignment         = Enum.TextXAlignment.Left
+    titleL.ZIndex                 = 102
+    titleL.Parent                 = card
 
     local textL = Instance.new("TextLabel")
-    textL.Size                = UDim2.new(1, -26, 0, 20)
-    textL.Position            = UDim2.new(0, 12, 0, 33)
+    textL.Size                   = UDim2.new(1, -26, 0, 20)
+    textL.Position               = UDim2.new(0, 12, 0, 33)
     textL.BackgroundTransparency = 1
-    textL.Text                = text
-    textL.TextColor3          = Theme.Dim
-    textL.TextSize            = 12
-    textL.Font                = Enum.Font.Gotham
-    textL.TextXAlignment      = Enum.TextXAlignment.Left
-    textL.TextWrapped         = true
-    textL.ZIndex              = 102
-    textL.Parent              = card
+    textL.Text                   = text
+    textL.TextColor3             = Theme.Dim
+    textL.TextSize               = 12
+    textL.Font                   = Enum.Font.Gotham
+    textL.TextXAlignment         = Enum.TextXAlignment.Left
+    textL.TextWrapped            = true
+    textL.ZIndex                 = 102
+    textL.Parent                 = card
 
     SafeTween(card, TweenInfo.new(0.28, Enum.EasingStyle.Quart, Enum.EasingDirection.Out), {
         Position = UDim2.new(1, -316, 1, slotY)
